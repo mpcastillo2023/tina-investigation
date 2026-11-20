@@ -1,0 +1,7 @@
+node_modules/
+build/
+.docusaurus/
+.env*
+!.env.example
+static/admin/
+/tina/__generated__/

@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: tina-investigation
+    runtime: static
+    branch: main
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: "24.22.1"
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+      - key: NEXT_PUBLIC_TINA_CLIENT_ID
+        sync: false
+      - key: TINA_TOKEN
+        sync: false
+      - key: NEXT_PUBLIC_TINA_BRANCH
+        value: main

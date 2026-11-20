@@ -1,0 +1,38 @@
+{
+  "name": "tina-investigation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A multilingual TinaCMS and Docusaurus demo hosted as one Render static site.",
+  "scripts": {
+    "start": "docusaurus start",
+    "cms": "tinacms dev --port 4002 -c \"npm start -- --host 127.0.0.1\"",
+    "build": "tinacms build && docusaurus build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.1.0",
+    "@docusaurus/preset-classic": "3.1.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-lunr-search": "^3.3.2",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@tinacms/cli": "4.0.5",
+    "@docusaurus/module-type-aliases": "3.1.0",
+    "@docusaurus/tsconfig": "3.1.0",
+    "@docusaurus/types": "3.1.0",
+    "typescript": "~5.2.2",
+    "tinacms": "3.15.2"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "overrides": {
+    "webpack": "5.104.1"
+  }
+}
