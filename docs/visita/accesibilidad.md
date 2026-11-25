@@ -10,4 +10,4 @@ La entrada principal no tiene escalones. Hay espacios reservados para sillas de 
 
 ## Solicitudes
 
-Contacta con el equipo de atención al menos 48 horas antes de tu visita. prueba con tina
+Contacta con el equipo de atención al menos 48 horas antes de tu visita. prueba con tina actualizando!
