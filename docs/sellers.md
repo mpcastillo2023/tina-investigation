@@ -3,6 +3,8 @@ title: Distribuidores
 description: Gestiona los distribuidores que ofrecen entradas del recinto.
 sidebar_label: Distribuidores
 sidebar_position: 1
+sidebar_custom_props:
+  showInMenu: true
 ---
 
 > Contenido ilustrativo para esta demo; no representa datos ni políticas reales.

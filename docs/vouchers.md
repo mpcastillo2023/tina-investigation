@@ -3,6 +3,8 @@ title: Vouchers
 description: Documenta códigos promocionales que pueden atribuir ventas a una campaña o distribuidor.
 sidebar_label: Vouchers
 sidebar_position: 3
+sidebar_custom_props:
+  showInMenu: true
 ---
 
 > Contenido ilustrativo para esta demo; no representa datos ni políticas reales.

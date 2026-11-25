@@ -3,6 +3,8 @@ title: Distribuïdors
 description: Gestioneu els distribuïdors que ofereixen entrades del recinte.
 sidebar_label: Distribuïdors
 sidebar_position: 1
+sidebar_custom_props:
+  showInMenu: true
 ---
 
 > Contingut il·lustratiu per a aquesta demo; no representa dades ni polítiques reals.
