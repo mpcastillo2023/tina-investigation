@@ -1,0 +1,13 @@
+{
+  "label": "Distribuïdors",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false,
+  "customProps": {
+    "showInMenu": true
+  },
+  "link": {
+    "type": "doc",
+    "id": "sellers/index"
+  }
+}
