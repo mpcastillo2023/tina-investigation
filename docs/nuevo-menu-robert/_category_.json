@@ -4,5 +4,8 @@
   "collapsed": false,
   "link": {
     "type": "generated-index"
+  },
+  "customProps": {
+    "showInMenu": false
   }
 }

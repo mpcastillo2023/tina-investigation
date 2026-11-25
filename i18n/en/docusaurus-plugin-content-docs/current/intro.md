@@ -1,7 +1,8 @@
 ---
 title: Aurora Hall guide
 description: Welcome to Aurora Hall, a fictional venue created for this content editing demo. Check the calendar, plan a visit, and learn about entry.
-sidebar_position: 1
+sidebar_custom_props:
+  showInMenu: false
 ---
 
 ## Plan your visit

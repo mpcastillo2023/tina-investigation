@@ -1,7 +1,8 @@
 ---
 title: Guia d’Aurora Hall
 description: Us donem la benvinguda a Aurora Hall, un recinte fictici per a aquesta demostració d’edició de contingut. Consulteu el calendari, prepareu la visita i conegueu les normes d’accés.
-sidebar_position: 1
+sidebar_custom_props:
+  showInMenu: false
 ---
 
 ## Planifiqueu la visita

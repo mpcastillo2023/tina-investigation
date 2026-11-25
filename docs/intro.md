@@ -1,7 +1,8 @@
 ---
 title: Guía de Aurora Hall
 description: Bienvenido a Aurora Hall, un recinto ficticio para la demostración de edición de contenido. Consulta el calendario, prepara una visita y conoce las normas de acceso.
-sidebar_position: 1
+sidebar_custom_props:
+  showInMenu: false
 ---
 
 ## Planifica tu visita

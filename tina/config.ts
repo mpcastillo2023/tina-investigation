@@ -1,19 +1,21 @@
 import { defineConfig } from 'tinacms';
 import { installCategoryFolderAutomation } from './ensure-category';
 
-const documentFields = (labels: {title: string; description: string; menu: string; position: string; body: string}) => [
+const documentFields = (labels: {title: string; description: string; menu: string; position: string; body: string; showInMenu: string}) => [
   { type: 'string' as const, name: 'title', label: labels.title, required: false },
   { type: 'string' as const, name: 'description', label: labels.description },
   { type: 'string' as const, name: 'sidebar_label', label: labels.menu },
   { type: 'number' as const, name: 'sidebar_position', label: labels.position },
+  { type: 'object' as const, name: 'sidebar_custom_props', label: 'Menu options', fields: [{ type: 'boolean' as const, name: 'showInMenu', label: labels.showInMenu }] },
   { type: 'rich-text' as const, name: 'body', label: labels.body, isBody: true },
 ];
 
-const categoryFields = (labels: {label: string; position: string; collapsible: string; collapsed: string}) => [
+const categoryFields = (labels: {label: string; position: string; collapsible: string; collapsed: string; showInMenu: string}) => [
   { type: 'string' as const, name: 'label', label: labels.label, isTitle: true, required: true },
   { type: 'number' as const, name: 'position', label: labels.position },
   { type: 'boolean' as const, name: 'collapsible', label: labels.collapsible, ui: { component: null } },
   { type: 'boolean' as const, name: 'collapsed', label: labels.collapsed, ui: { component: null } },
+  { type: 'object' as const, name: 'customProps', label: 'Menu options', fields: [{ type: 'boolean' as const, name: 'showInMenu', label: labels.showInMenu }] },
   {
     type: 'object' as const,
     name: 'link',
@@ -34,21 +36,21 @@ const locales = [
     locale: 'es',
     label: 'Español',
     documentPath: 'docs',
-    title: 'Título', description: 'Descripción', menu: 'Nombre en el menú', position: 'Posición en el menú', body: 'Contenido',
+    title: 'Título', description: 'Descripción', menu: 'Nombre en el menú', position: 'Posición en el menú', body: 'Contenido', showInMenu: 'Mostrar en el menú',
     categoryLabel: 'Categorías del menú',
   },
   {
     locale: 'en',
     label: 'English',
     documentPath: 'i18n/en/docusaurus-plugin-content-docs/current',
-    title: 'Title', description: 'Description', menu: 'Sidebar label', position: 'Sidebar position', body: 'Content',
+    title: 'Title', description: 'Description', menu: 'Sidebar label', position: 'Sidebar position', body: 'Content', showInMenu: 'Show in menu',
     categoryLabel: 'Menu categories',
   },
   {
     locale: 'ca',
     label: 'Català',
     documentPath: 'i18n/ca/docusaurus-plugin-content-docs/current',
-    title: 'Títol', description: 'Descripció', menu: 'Nom al menú', position: 'Posició al menú', body: 'Contingut',
+    title: 'Títol', description: 'Descripció', menu: 'Nom al menú', position: 'Posició al menú', body: 'Contingut', showInMenu: 'Mostrar al menú',
     categoryLabel: 'Categories del menú',
   },
 ];
@@ -93,6 +95,7 @@ export default defineConfig({
           position: locale.position,
           collapsible: locale.locale === 'es' ? 'Plegable' : locale.locale === 'en' ? 'Collapsible' : 'Plegable',
           collapsed: locale.locale === 'es' ? 'Plegada por defecto' : locale.locale === 'en' ? 'Collapsed by default' : 'Plegada per defecte',
+          showInMenu: locale.showInMenu,
         }),
       },
     ]),
