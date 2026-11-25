@@ -1,4 +1,5 @@
 import { defineConfig } from 'tinacms';
+import { installCategoryFolderAutomation } from './ensure-category';
 
 const documentFields = (labels: {title: string; description: string; menu: string; position: string; body: string}) => [
   { type: 'string' as const, name: 'title', label: labels.title, required: false },
@@ -11,12 +12,13 @@ const documentFields = (labels: {title: string; description: string; menu: strin
 const categoryFields = (labels: {label: string; position: string; collapsible: string; collapsed: string}) => [
   { type: 'string' as const, name: 'label', label: labels.label, isTitle: true, required: true },
   { type: 'number' as const, name: 'position', label: labels.position },
-  { type: 'boolean' as const, name: 'collapsible', label: labels.collapsible },
-  { type: 'boolean' as const, name: 'collapsed', label: labels.collapsed },
+  { type: 'boolean' as const, name: 'collapsible', label: labels.collapsible, ui: { component: null } },
+  { type: 'boolean' as const, name: 'collapsed', label: labels.collapsed, ui: { component: null } },
   {
     type: 'object' as const,
     name: 'link',
     label: 'Docusaurus category link',
+    ui: { component: null },
     fields: [
       { type: 'string' as const, name: 'type', label: 'Type' },
       { type: 'string' as const, name: 'title', label: 'Title' },
@@ -56,6 +58,7 @@ export default defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || null,
   token: process.env.TINA_TOKEN || null,
   telemetry: 'disabled',
+  cmsCallback: installCategoryFolderAutomation,
   build: {
     publicFolder: 'static',
     outputFolder: 'admin',
@@ -81,9 +84,12 @@ export default defineConfig({
         path: locale.documentPath,
         format: 'json',
         match: { include: '**/_category_' },
-        ui: { filename: { slugify: () => '_category_' } },
+        ui: {
+          filename: { slugify: () => '_category_' },
+          defaultItem: { collapsible: true, collapsed: false, link: { type: 'generated-index' } },
+        },
         fields: categoryFields({
-          label: locale.locale === 'es' ? 'Nombre de categoría' : locale.locale === 'en' ? 'Category label' : 'Nom de categoria',
+          label: locale.locale === 'es' ? 'Nombre en el menú' : locale.locale === 'en' ? 'Menu name' : 'Nom al menú',
           position: locale.position,
           collapsible: locale.locale === 'es' ? 'Plegable' : locale.locale === 'en' ? 'Collapsible' : 'Plegable',
           collapsed: locale.locale === 'es' ? 'Plegada por defecto' : locale.locale === 'en' ? 'Collapsed by default' : 'Plegada per defecte',

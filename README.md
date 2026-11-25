@@ -27,6 +27,8 @@ Set the environment values in Render’s dashboard and mark `TINA_TOKEN` as secr
 
 Use Node 24.22.1, then run `npm ci` and `npm run cms`. Tina’s local editor writes to the working tree and is for development. The production build intentionally uses TinaCloud credentials and branch `main`; do not enable Tina’s local mode in the deployed build.
 
+When an editor uses **Add Folder** in a language’s document collection, Tina also creates that folder’s `_category_.json` with a generated-index link and default collapsible settings. Editors can then adjust the menu name and order in the matching menu categories collection; technical link and collapse settings stay hidden and retain their stored values. This automation runs through Tina’s document collections; folders added directly to the filesystem or Git still need a `_category_.json` created manually. If a prior attempt left a folder without its category, using **Add Folder** again for that same folder completes the category setup.
+
 ## Content and privacy
 
 All included venue details and the SVG illustration are fictional sample content. The site is public when deployed, including its documentation and editor shell. TinaCloud controls editor authentication and its content API; it does not make the published documentation private. Review content before adding anything private.

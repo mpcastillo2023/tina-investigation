@@ -1,0 +1,8 @@
+{
+  "label": "Nuevo menú",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index"
+  }
+}
