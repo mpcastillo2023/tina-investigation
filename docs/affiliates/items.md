@@ -2,7 +2,7 @@
 title: Ítems
 description: Describe los ítems que un afiliado puede promocionar.
 sidebar_label: Ítems
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 > Contenido ilustrativo para esta demo; no representa datos ni políticas reales.
