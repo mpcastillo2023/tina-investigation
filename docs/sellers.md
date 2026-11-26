@@ -19,4 +19,4 @@ Revisa identidad y contacto, confirma el canal de venta y actualiza el estado.
 
 ## Consejos
 
-Usa datos de muestra y confirma cualquier condición comercial antes de publicarla.
+Usa datos de muestra y confirma cualquier condición comercial antes de publicarla. una prueba
